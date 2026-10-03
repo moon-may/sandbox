@@ -35,6 +35,9 @@ def decrypt(text, shift):
         if i in alphabet:
             index = (alphabet.index(i) - shift) % 33
             coding_text.append(alphabet[index])
+        elif i in upper_alphabet:
+            index = (upper_alphabet.index(i) - shift) % 33
+            coding_text.append(upper_alphabet[index])
         else:
             coding_text.append(i)
 
