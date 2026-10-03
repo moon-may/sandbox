@@ -5,6 +5,11 @@ alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и',
             'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 
             'э', 'ю', 'я']
 
+upper_alphabet = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
+                  'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т',
+                  'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь',
+                  'Э', 'Ю', 'Я' ]
+
 def encrypt(text, shift):
     coding_text = []
     cur_text = list(text)
@@ -13,6 +18,9 @@ def encrypt(text, shift):
         if i in alphabet:
             index = (alphabet.index(i) + shift) % 33
             coding_text.append(alphabet[index])
+        elif i in upper_alphabet:
+            index = (upper_alphabet.index(i) + shift) % 33
+            coding_text.append(upper_alphabet[index])
         else:
             coding_text.append(i)
 
